@@ -98,7 +98,7 @@ jobs:
         run: |
           mkdir -v -p build/web
           git rev-parse --short HEAD > git-hash.txt
-          godot -v --export-release --headless "HTML5" build/web/index.html
+          godot -v --export-release --headless "Web" build/web/index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -133,7 +133,7 @@ jobs:
         run: |
           mkdir -v -p build/mac
           git rev-parse --short HEAD > git-hash.txt
-          godot -v --export-release --headless "Mac OSX" build/mac/$EXPORT_NAME.zip
+          godot -v --export-release --headless "maxOS" build/mac/$EXPORT_NAME.zip
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

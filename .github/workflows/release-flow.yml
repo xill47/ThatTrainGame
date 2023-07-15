@@ -31,10 +31,9 @@ jobs:
       image: barichello/godot-ci:4.1
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           lfs: true
-          set-safe-directory: '*'
       - name: Fix Git ownership
         run: |
           git config --global --add safe.directory .

@@ -41,7 +41,6 @@ jobs:
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
-          cd $PROJECT_PATH
           git rev-parse --short HEAD > git-hash.txt
           godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
       - name: Upload Artifact

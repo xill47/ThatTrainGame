@@ -10,5 +10,5 @@ func _process(delta):
 	offset += requested_direction * speed * delta
 
 	var requested_zoom := Input.get_axis("camera_zoom_in", "camera_zoom_out")
-	zoom += requested_zoom * speed * delta
+	zoom += Vector2(requested_zoom, requested_zoom) * speed * delta
 

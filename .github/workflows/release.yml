@@ -127,6 +127,8 @@ jobs:
         run: |
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      - name: Fix git
+        run: git config --global --add safe.directory /__w/ThatTrainGame/ThatTrainGame
       - name: Mac Build
         run: |
           mkdir -v -p build/mac

@@ -1,7 +1,15 @@
 {
-    "[*.gd]": {
-        "editor.tabSize": 4,
+    "[gdscript, *.gd]": {
         "editor.insertSpaces": false,
+        "editor.tabSize": 4,
         "editor.detectIndentation": false
+    },
+    "[gdscript]": {
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.tabSize": 4,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": false
     }
 }

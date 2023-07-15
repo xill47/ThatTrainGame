@@ -130,7 +130,6 @@ jobs:
       - name: Mac Build
         run: |
           mkdir -v -p build/mac
-          cd $PROJECT_PATH
           git rev-parse --short HEAD > git-hash.txt
           godot -v --export-release --headless "Mac OSX" build/mac/$EXPORT_NAME.zip
       - name: Upload Artifact

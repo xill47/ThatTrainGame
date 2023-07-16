@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://jrjjg0nyc6r0"]
 
-[ext_resource type="Texture2D" uid="uid://bv4vwb0pg0kw4" path="res://World/tileset.png" id="1_2d2nc"]
+[ext_resource type="Texture2D" uid="uid://bv4vwb0pg0kw4" path="res://world/tileset.png" id="1_2d2nc"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u636m"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -24,6 +24,6 @@ texture = ExtResource("1_2d2nc")
 
 [resource]
 occlusion_layer_0/light_mask = 1
-custom_data_layer_0/name = "railway_cost_iron"
+custom_data_layer_0/name = "cost"
 custom_data_layer_0/type = 2
 sources/1 = SubResource("TileSetAtlasSource_pyt3g")

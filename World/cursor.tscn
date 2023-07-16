@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://boyg5s4n3gm3"]
 
-[ext_resource type="Script" path="res://World/cursor_script.gd" id="1_amhto"]
+[ext_resource type="Script" path="res://world/cursor.gd" id="1_2v34o"]
 
 [sub_resource type="Animation" id="Animation_jsoyd"]
 length = 0.001
@@ -29,7 +29,7 @@ _data = {
 }
 
 [node name="Cursor" type="Node2D"]
-script = ExtResource("1_amhto")
+script = ExtResource("1_2v34o")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(16, 16)
@@ -45,42 +45,43 @@ libraries = {
 "": SubResource("AnimationLibrary_3yohi")
 }
 
-[node name="CostV" type="VBoxContainer" parent="."]
+[node name="CostContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -29.0
+offset_left = -33.5
 offset_top = -56.0
-offset_right = 29.0
+offset_right = 33.5
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = -4
 
-[node name="CostHTop" type="HBoxContainer" parent="CostV"]
+[node name="CostHTop" type="HBoxContainer" parent="CostContainer"]
 layout_mode = 2
 
-[node name="Metal" type="Label" parent="CostV/CostHTop"]
+[node name="Metal" type="Label" parent="CostContainer/CostHTop"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Metal: "
 
-[node name="MetalCost" type="Label" parent="CostV/CostHTop"]
+[node name="MetalCost" type="Label" parent="CostContainer/CostHTop"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "2"
 
-[node name="CostHBot" type="HBoxContainer" parent="CostV"]
+[node name="CostHBot" type="HBoxContainer" parent="CostContainer"]
 layout_mode = 2
 
-[node name="Coal" type="Label" parent="CostV/CostHBot"]
+[node name="Coal" type="Label" parent="CostContainer/CostHBot"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Coal: "
 
-[node name="CoalCost" type="Label" parent="CostV/CostHBot"]
+[node name="CoalCost" type="Label" parent="CostContainer/CostHBot"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "5"

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bd5vhobh6opp"]
+[gd_scene load_steps=2 format=3 uid="uid://bd5vhobh6opp"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_f10qb"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -9,10 +11,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("1_f10qb")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="RailButton" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -22,3 +25,30 @@ offset_right = 76.0
 offset_bottom = 57.0
 grow_vertical = 2
 text = "Rail"
+
+[node name="ResourceContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -545.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Coal" type="Label" parent="ResourceContainer"]
+layout_mode = 2
+text = "Coal"
+
+[node name="CoalCount" type="Label" parent="ResourceContainer"]
+layout_mode = 2
+text = "10"
+
+[node name="Metal" type="Label" parent="ResourceContainer"]
+layout_mode = 2
+text = "Metal"
+
+[node name="MetalCount" type="Label" parent="ResourceContainer"]
+layout_mode = 2
+text = "10"
+
+[connection signal="pressed" from="RailButton" to="." method="_on_rail_button_pressed"]

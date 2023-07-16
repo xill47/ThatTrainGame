@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cermkkogwpuu4"]
+[gd_scene load_steps=6 format=3 uid="uid://cermkkogwpuu4"]
 
-[ext_resource type="TileSet" uid="uid://jrjjg0nyc6r0" path="res://world/tileset.tres" id="1_qtajf"]
+[ext_resource type="TileSet" uid="uid://jrjjg0nyc6r0" path="res://World/tileset.tres" id="1_qtajf"]
 [ext_resource type="Script" path="res://world/map.gd" id="2_t0c36"]
-[ext_resource type="PackedScene" uid="uid://boyg5s4n3gm3" path="res://world/cursor.tscn" id="3_3o17y"]
+[ext_resource type="PackedScene" uid="uid://boyg5s4n3gm3" path="res://World/cursor.tscn" id="3_3o17y"]
 [ext_resource type="Script" path="res://world/main_camera.gd" id="4_lj8dv"]
+[ext_resource type="PackedScene" uid="uid://bd5vhobh6opp" path="res://hud.tscn" id="5_u5tvc"]
 
 [node name="World" type="Node2D"]
 
@@ -28,3 +29,33 @@ unique_name_in_owner = true
 anchor_mode = 0
 script = ExtResource("4_lj8dv")
 speed = 500
+
+[node name="HUD" parent="." instance=ExtResource("5_u5tvc")]
+
+[node name="ResourceContainer" type="HBoxContainer" parent="HUD/CanvasLayer" index="1"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -545.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Coal" type="Label" parent="HUD/CanvasLayer/ResourceContainer"]
+layout_mode = 2
+text = "Coal"
+
+[node name="CoalCount" type="Label" parent="HUD/CanvasLayer/ResourceContainer"]
+layout_mode = 2
+text = "10"
+
+[node name="Metal" type="Label" parent="HUD/CanvasLayer/ResourceContainer"]
+layout_mode = 2
+text = "Metal"
+
+[node name="MetalCount" type="Label" parent="HUD/CanvasLayer/ResourceContainer"]
+layout_mode = 2
+text = "10"
+
+[connection signal="pressed" from="HUD/CanvasLayer/Button" to="Map" method="_on_button_pressed"]
+
+[editable path="HUD"]
